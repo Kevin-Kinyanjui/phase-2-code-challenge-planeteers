@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
+  const [search, setSearch] = useState("");
+
+  function handleSearch(event) {
+    setSearch(event.target.value);
+    onSearch(search);
+  }
+
   return (
     <div className="search">
-      {/* For the advanced deliverables: add a checkbox to allow sorting the planeteer */}
+      <input
+        type="text"
+        value={search}
+        onChange={handleSearch}
+        placeholder="What would you like to search for?"
+        className="search"
+      />
     </div>
   );
 }
