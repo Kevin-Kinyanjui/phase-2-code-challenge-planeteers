@@ -7,6 +7,8 @@ function Planeteer({ planeteer }) {
     setShowingBio((prevBioState) => !prevBioState);
   }
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <li className="cards__item">
       <div className="card">
@@ -22,8 +24,11 @@ function Planeteer({ planeteer }) {
             {showingBio ? planeteer.bio : planeteer.quote}
           </p>
           <div className="card__detail">
-            <p>{planeteer.twitter}</p>
-            <p>{planeteer.fromUSA ? "USA-based" : "Working overseas"}</p>
+            <p className="card__text">{planeteer.twitter}</p>
+            <p className="card__text">Age {currentYear - planeteer.born}</p>
+            <p className="card__text">
+              {planeteer.fromUSA ? "USA-based" : "Working overseas"}
+            </p>
           </div>
         </div>
       </div>
