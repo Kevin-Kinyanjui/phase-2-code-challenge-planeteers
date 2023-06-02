@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Planeteer from "./Planeteer";
-// import { searchTerm } from "./App";
 
 function PlaneteersContainer({ searchTerm }) {
   const [planeteers, setPlaneteers] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  // const [searchTerm, setSearchTerm] = useState("");
-
-  // function handleSearch(searchTerm) {
-  //   setSearchTerm(searchTerm);
-  // }
 
   useEffect(() => {
     fetch("http://localhost:8003/planeteers")
@@ -46,7 +40,6 @@ function PlaneteersContainer({ searchTerm }) {
 
   return (
     <ul className="cards">
-      {/* <SearchBar onSearch={handleSearch} /> */}
       {searchedPlaneteers.map((planeteer) => (
         <Planeteer key={planeteer.id} planeteer={planeteer} />
       ))}

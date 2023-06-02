@@ -8,8 +8,8 @@ import SearchBar from "./SearchBar";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  function handleSearch(searchTerm) {
-    setSearchTerm(searchTerm);
+  function handleSearch(searchText) {
+    setSearchTerm(searchText);
   }
 
   return (
