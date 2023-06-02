@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Planeteer from "./Planeteer";
+import RandomButton from "./RandomButton";
 
 function PlaneteersContainer({ searchTerm }) {
   const [planeteers, setPlaneteers] = useState(null);
@@ -39,11 +40,14 @@ function PlaneteersContainer({ searchTerm }) {
   );
 
   return (
-    <ul className="cards">
-      {searchedPlaneteers.map((planeteer) => (
-        <Planeteer key={planeteer.id} planeteer={planeteer} />
-      ))}
-    </ul>
+    <>
+      <RandomButton planeteers={planeteers} setPlaneteers={setPlaneteers} />
+      <ul className="cards">
+        {searchedPlaneteers.map((planeteer) => (
+          <Planeteer key={planeteer.id} planeteer={planeteer} />
+        ))}
+      </ul>
+    </>
   );
 }
 

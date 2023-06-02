@@ -16,7 +16,7 @@ function App() {
     <div>
       <Header />
       <SearchBar onSearch={handleSearch} />
-      <RandomButton />
+      {/* <RandomButton /> */}
       <PlaneteersContainer searchTerm={searchTerm} />
     </div>
   );
